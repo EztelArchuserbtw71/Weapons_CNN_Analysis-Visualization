@@ -1,0 +1,169 @@
+{
+ "id": "C6",
+ "inputSize": 150,
+ "labels": [
+  "harmless_object",
+  "melee",
+  "ranged",
+  "student"
+ ],
+ "layers": [
+  {
+   "type": "Conv2D",
+   "filters": 32,
+   "kernelSize": [
+    3,
+    3
+   ],
+   "activation": "relu",
+   "weights": [
+    {
+     "shape": [
+      3,
+      3,
+      3,
+      32
+     ],
+     "offset": 0,
+     "size": 864
+    },
+    {
+     "shape": [
+      32
+     ],
+     "offset": 864,
+     "size": 32
+    }
+   ]
+  },
+  {
+   "type": "MaxPooling2D",
+   "poolSize": [
+    2,
+    2
+   ],
+   "weights": []
+  },
+  {
+   "type": "Conv2D",
+   "filters": 64,
+   "kernelSize": [
+    3,
+    3
+   ],
+   "activation": "relu",
+   "weights": [
+    {
+     "shape": [
+      3,
+      3,
+      32,
+      64
+     ],
+     "offset": 896,
+     "size": 18432
+    },
+    {
+     "shape": [
+      64
+     ],
+     "offset": 19328,
+     "size": 64
+    }
+   ]
+  },
+  {
+   "type": "MaxPooling2D",
+   "poolSize": [
+    2,
+    2
+   ],
+   "weights": []
+  },
+  {
+   "type": "Conv2D",
+   "filters": 128,
+   "kernelSize": [
+    3,
+    3
+   ],
+   "activation": "relu",
+   "weights": [
+    {
+     "shape": [
+      3,
+      3,
+      64,
+      128
+     ],
+     "offset": 19392,
+     "size": 73728
+    },
+    {
+     "shape": [
+      128
+     ],
+     "offset": 93120,
+     "size": 128
+    }
+   ]
+  },
+  {
+   "type": "MaxPooling2D",
+   "poolSize": [
+    2,
+    2
+   ],
+   "weights": []
+  },
+  {
+   "type": "Flatten",
+   "weights": []
+  },
+  {
+   "type": "Dense",
+   "units": 128,
+   "activation": "relu",
+   "weights": [
+    {
+     "shape": [
+      36992,
+      128
+     ],
+     "offset": 93248,
+     "size": 4734976
+    },
+    {
+     "shape": [
+      128
+     ],
+     "offset": 4828224,
+     "size": 128
+    }
+   ]
+  },
+  {
+   "type": "Dense",
+   "units": 4,
+   "activation": "softmax",
+   "weights": [
+    {
+     "shape": [
+      128,
+      4
+     ],
+     "offset": 4828352,
+     "size": 512
+    },
+    {
+     "shape": [
+      4
+     ],
+     "offset": 4828864,
+     "size": 4
+    }
+   ]
+  }
+ ],
+ "params": 4828868
+}

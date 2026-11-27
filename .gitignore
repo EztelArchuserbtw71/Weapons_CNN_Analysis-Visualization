@@ -1,0 +1,16 @@
+# Python environment (1+ GB, rebuild with: py -3.11 -m venv .venv)
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# Too large for GitHub
+dataset/
+*.h5
+*.keras
+
+# Raw photos of students
+my_photos_test/
+
+# Website build output
+node_modules/
+dist/
